@@ -17,3 +17,5 @@ All the required libraries are in requirements.txt
 * models/model.joblib : the model created in the notebook
 
 * AWS_sketch.txt : explanation of how the model would be implemented in AWS
+
+NOTE: the uncompressed file with questions nlp_test.csv is also necessary to run the notebook
