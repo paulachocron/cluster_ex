@@ -1,8 +1,9 @@
 Code to solve the clustering exercise.
 
 ## Requirements
-Python 3
-All the required libraries are in requirements.txt
+* Python 3
+
+* All the required libraries are in requirements.txt
 
 ## Contents
 
