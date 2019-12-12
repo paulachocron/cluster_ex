@@ -1,0 +1,7 @@
+Here I sketch how I would train and serve the model in AWS.
+
+The most important part here is to keep the training and the serving/inference divided. This will be crucial to optimize resources.
+
+To train the model it is possible to use a local machine, as I did in this exercise. It is also possible to use a AWS EC2 instance, preferably with a powerful GPU. This would allow us to use more sophisticated methods that would not run on a simple CPU (for example, we could experiment with BERT embeddings). Importantly, all the training should be performed using Docker containers to ensure the models are created in a controlled environment.
+
+To serve the model I would use a smaller, CPU instance. Inference does not need many resources, and this instance will be continuously on. I would build a web service with an API to serve this model. In this case I would not use Flask, which is not suitable for production, but rather aiohttp. This service would be in a docker container. Finally, I would host this container on the EC2 instance to serve the model. An important note is that in this case I used a Sckit-learn method for simplicity, but if this was a Tensorflow model I would use Tensorflow Serving, which integrates directly with docker, for inference. In this case I would have a container to receive the queries and make relevant preprocessing, which would call Tensorflow Serving.
