@@ -1,5 +1,5 @@
 flask
-tensorflow==2.0
+tensorflow==2.9.3
 tensorflow_text
 tensorflow_hub
 pandas
